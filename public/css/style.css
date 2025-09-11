@@ -748,7 +748,6 @@ html {
     flex-wrap: wrap;
     justify-content: space-evenly;
     position: relative;
-    
 }
 
 .footer-desc{
@@ -895,13 +894,35 @@ html {
 
 /* box animation */
 
-.footer {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+.footer-heading,
+.footer-text1,
+.footer-text2,
+.footer-join {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-.footer.fade-in {
-  opacity: 1;
-  transform: translateY(0);
+.footer-heading.slide-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.1s;
+}
+
+.footer-text1.slide-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+
+.footer-text2.slide-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+}
+
+.footer-join.slide-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.7s;
 }

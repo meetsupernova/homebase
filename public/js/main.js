@@ -148,9 +148,8 @@ function showMessage(message, type = 'info') {
     }, 5000);
 }
 
-// Scroll animations - KEEP THIS IN FRONTEND
 function initScrollAnimations() {
-    // Intersection Observer for fade-in animations
+    // Intersection Observer for fade-in animations (boxes)
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -164,7 +163,50 @@ function initScrollAnimations() {
         });
     }, observerOptions);
 
-    // Observe all boxes and footer
-    const animatedElements = document.querySelectorAll('.box, .footer');
-    animatedElements.forEach(el => observer.observe(el));
+    // Observe all boxes
+    const boxes = document.querySelectorAll('.box');
+    boxes.forEach(el => observer.observe(el));
+
+    // Separate observer for footer text animations
+    const footerObserverOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const footerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Trigger staggered animations for footer elements
+                animateFooterElements();
+                // Only observe once
+                footerObserver.unobserve(entry.target);
+            }
+        });
+    }, footerObserverOptions);
+
+    // Observe the footer container
+    const footer = document.querySelector('.footer');
+    if (footer) {
+        footerObserver.observe(footer);
+    }
+}
+
+// Function to animate footer elements with stagger
+function animateFooterElements() {
+    const footerElements = [
+        '.footer-heading',
+        '.footer-text1', 
+        '.footer-text2',
+        '.footer-join'
+    ];
+
+    footerElements.forEach((selector, index) => {
+        const element = document.querySelector(selector);
+        if (element) {
+            // Add a small delay for each element
+            setTimeout(() => {
+                element.classList.add('slide-in');
+            }, index * 200); // 200ms delay between each element
+        }
+    });
 }
