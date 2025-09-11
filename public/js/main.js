@@ -1,5 +1,5 @@
 // Configuration
-const API_BASE_URL = 'https://homebase-livid.vercel.app/';
+const API_BASE_URL = '';
 
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
