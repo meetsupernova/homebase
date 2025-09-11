@@ -1,9 +1,5 @@
 import { Pool } from 'pg';
 
-// Simplified version for testing - replace your current database insertion
-const query = `INSERT INTO email_signups (email) VALUES ($1) RETURNING id, email`;
-const result = await pool.query(query, [normalizedEmail]);
-
 // Rate limiting storage (in-memory for simplicity)
 const rateLimitMap = new Map();
 
@@ -71,10 +67,10 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Get client IP for rate limiting
+    // Get client IP for rate limiting - FIXED VERSION
     let clientIP = req.headers['x-forwarded-for'] || 
-                  req.headers['x-real-ip'] || 
-                  '127.0.0.1';
+                   req.headers['x-real-ip'] || 
+                   '127.0.0.1';
 
     // Handle multiple IPs (take the first one)
     if (typeof clientIP === 'string' && clientIP.includes(',')) {
@@ -141,7 +137,16 @@ export default async function handler(req, res) {
     });
 
   } catch (error) {
-    console.error('Signup error:', error);
+    // ENHANCED ERROR LOGGING
+    console.error('Detailed signup error:', {
+      message: error.message,
+      code: error.code,
+      stack: error.stack,
+      envCheck: {
+        hasDatabaseUrl: !!process.env.DATABASE_URL,
+        nodeEnv: process.env.NODE_ENV
+      }
+    });
 
     // Handle duplicate email
     if (error.code === '23505') { // PostgreSQL unique violation
