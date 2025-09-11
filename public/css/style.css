@@ -217,7 +217,7 @@ html {
         0 0 40px rgba(134, 234, 212, 0.6),
         0 0 80px rgba(134, 234, 212, 0.4);
     
-    animation: glow 2s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
     
     /* Grid positioning - same cell as image */
     grid-column: 1;
@@ -236,7 +236,7 @@ html {
         box-shadow: 
             0 0 30px rgba(134, 234, 212, 1),
             0 0 60px rgba(134, 234, 212, 0.8),
-            0 0 120px rgba(134, 234, 212, 0.6);
+            0 0 100px rgba(134, 234, 212, 0.6);
     }
 }
 /* mobile hero section */
@@ -732,7 +732,7 @@ html {
 .box {
   opacity: 0;
   transform: translateY(50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .box.fade-in {
