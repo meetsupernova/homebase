@@ -206,7 +206,7 @@ function animateFooterElements() {
             // Add a small delay for each element
             setTimeout(() => {
                 element.classList.add('slide-in');
-            }, index * 200); // 200ms delay between each element
+            }, index * 100); // 200ms delay between each element
         }
     });
 }
