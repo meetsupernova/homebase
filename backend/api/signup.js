@@ -68,10 +68,10 @@ export default async function handler(req, res) {
 
   try {
     // Get client IP for rate limiting
-    const clientIP = req.headers['x-forwarded-for'] || 
-                    req.headers['x-real-ip'] || 
-                    req.connection?.remoteAddress || 
-                    '127.0.0.1';
+    const clientIP = req.headers['x-forwarded-for'] ||
+      req.headers['x-real-ip'] ||
+      req.connection?.remoteAddress ||
+      '127.0.0.1';
 
     // Check rate limiting
     if (isRateLimited(clientIP)) {
@@ -148,3 +148,4 @@ export default async function handler(req, res) {
       message: 'Something went wrong. Please try again later.'
     });
   }
+}
