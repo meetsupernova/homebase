@@ -1,52 +1,5 @@
-/* Send email to backend */
-
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector("#join-form");
-
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const email = document.querySelector("#join-email").value;
-
-    try {
-      const res = await fetch("/join", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email })
-      });
-
-      const data = await res.json();
-      alert(data.msg);
-      form.reset();
-    } catch (err) {
-      console.error(err);
-      alert("Error saving email.");
-    }
-  });
-});
-
-/* Animations */
-
-document.addEventListener("DOMContentLoaded", () => {
-  const boxes = document.querySelectorAll(".box");
-  const footer = document.querySelectorAll(".footer")
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("fade-in");
-        observer.unobserve(entry.target); // optional: only animate once
-      }
-    });
-  }, {
-    threshold: 0.2 // triggers when 20% of the element is visible
-  });
-
-  boxes.forEach(box => observer.observe(box));
-  footer.forEach(footer => observer.observe(footer));
-});
-
 // Configuration
-const API_BASE_URL = 'http://localhost:3000'; // Update this for production
+const API_BASE_URL = 'https://homebase-livid.vercel.app/';
 
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -57,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
 });
 
-// Email signup functionality
+// Email signup functionality - KEEP THIS IN FRONTEND
 function initEmailSignup() {
     const form = document.querySelector('.join-email');
     const emailInput = document.getElementById('join-email');
@@ -113,13 +66,13 @@ function initEmailSignup() {
     });
 }
 
-// Email validation
+// Email validation - KEEP THIS IN FRONTEND
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
 
-// Form state management
+// Form state management - KEEP THIS IN FRONTEND
 function setFormState(enabled) {
     const emailInput = document.getElementById('join-email');
     const submitBtn = document.querySelector('.join-btn');
@@ -136,7 +89,7 @@ function setFormState(enabled) {
     }
 }
 
-// Message display
+// Message display - KEEP THIS IN FRONTEND
 function showMessage(message, type = 'info') {
     // Remove existing messages
     const existingMessage = document.querySelector('.signup-message');
@@ -195,7 +148,7 @@ function showMessage(message, type = 'info') {
     }, 5000);
 }
 
-// Existing scroll animations (keeping your current functionality)
+// Scroll animations - KEEP THIS IN FRONTEND
 function initScrollAnimations() {
     // Intersection Observer for fade-in animations
     const observerOptions = {
