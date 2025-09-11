@@ -1,3 +1,4 @@
+/*
 import { Pool } from 'pg';
 
 // Rate limiting storage (in-memory for simplicity)
@@ -159,6 +160,35 @@ export default async function handler(req, res) {
     res.status(500).json({
       success: false,
       message: 'Something went wrong. Please try again later.'
+    });
+  }
+}
+*/
+
+import { Pool } from 'pg';
+
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false }
+});
+
+export default async function handler(req, res) {
+  try {
+    // Simple connection test
+    const result = await pool.query('SELECT NOW()');
+    
+    res.status(200).json({
+      success: true,
+      message: 'Database connection successful',
+      time: result.rows[0].now
+    });
+  } catch (error) {
+    console.error('Connection test error:', error);
+    
+    res.status(500).json({
+      success: false,
+      message: error.message,
+      code: error.code
     });
   }
 }
