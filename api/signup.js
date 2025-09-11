@@ -1,5 +1,9 @@
 import { Pool } from 'pg';
 
+// Simplified version for testing - replace your current database insertion
+const query = `INSERT INTO email_signups (email) VALUES ($1) RETURNING id, email`;
+const result = await pool.query(query, [normalizedEmail]);
+
 // Rate limiting storage (in-memory for simplicity)
 const rateLimitMap = new Map();
 
