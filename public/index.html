@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
     <!-- script -->
-    <script src="js/main.js"></script>
+    
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Supernova Landing Page</title>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/landing-page.css">
 
         <!-- Inter Font -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap">
-        <link rel="stylesheet" href="css/style.css">
 
         <!-- Icon -->
         <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     </head>
     <body>
-        <div class="scroll-watcher"></div>
+        <script src="js/main.js"></script>
         <header>
             <div class="header">
-                <div class="container">
-                    <!-- Logo + Company -->
-                    <div class="title">
-                        <div class="logo">
-                            <img src="./images/icon.png" alt="logo" width="25vw" height="25vw">
-                        </div>
-                        <div class="companyname">
-                            <p> Supernova </h1>
-                        </div>
+                <!-- Logo + Company -->
+                <div class="title">
+                    <div class="logo">
+                        <img src="./images/icon.png" alt="logo" width="25vw" height="25vw" loading="lazy">
+                    </div>
+                    <div class="companyname">
+                        <p> Supernova </p>
+                    </div>
+                </div>
+
+                <!-- Hamburger Menu (for mobile) -->
+                <button class="mobile-menu" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigation -->
+                <div class="navbar">
+                    <div class="community-btn">
+                        <a href="/community">Community</a>
                     </div>
                     <!-- Join Button -->
                     <div class="join">
-                        <a href="#join" class="btn-join">Join Waitlist</a>
+                        <a href="/" class="btn-join">Join Waitlist</a>
                     </div>
                 </div>
             </div>
@@ -51,7 +63,7 @@
                     helping you actually win them.
                 </p>
                 <div class="home">
-                    <img class="home-img" src="./images/home-img.png" alt="home">
+                    <img class="home-img" src="./images/landing-page/home-img.png" alt="home" loading="lazy">
                     <div class="home-glow"></div>
                 </div>
             </div>
@@ -78,10 +90,10 @@
                 <h1 class="description-heading">
                     How it works
                 </h1>
-                <div class="test">
-                    <div class="box" id="box">
+                <div class="description-boxes">
+                    <div class="box">
                         <div class="box-number">
-                            <img class="hexagon" src="./images/hexagon-circles.png" alt="hex">
+                            <img class="hexagon" src="./images/hexagon-circles.png" alt="hex" loading="lazy">
                             <p class="circle"> 01 </p>
                         </div>
                         <div class="desc">
@@ -93,13 +105,13 @@
                             </h3>
                         </div>
                         <div class="desc-img">
-                            <img src="./images/one-img.png" class="one-img">
+                            <img src="./images/landing-page/one-img.png" class="one-img" loading="lazy">
                         </div>
                     </div>
                     
-                    <div class="box" id="box">
+                    <div class="box">
                         <div class="box-number">
-                            <img class="hexagon" src="./images/hexagon-circles.png" alt="hex">
+                            <img class="hexagon" src="./images/hexagon-circles.png" alt="hex" loading="lazy">
                             <p class="circle"> 02 </p>
                         </div>
                         <div class="desc">
@@ -111,13 +123,13 @@
                             </h3>
                         </div>
                         <div class="desc-img">
-                            <img src="./images/two-img.png" class="two-img">
+                            <img src="./images/landing-page/two-img.png" class="two-img" loading="lazy">
                         </div>
                     </div>
                     
-                    <div class="box" id="box">
+                    <div class="box">
                         <div class="box-number">
-                            <img class="hexagon" src="./images/hexagon-circles.png" alt="hex">
+                            <img class="hexagon" src="./images/hexagon-circles.png" alt="hex" loading="lazy">
                             <p class="circle"> 03 </p>
                         </div>
                         <div class="desc">
@@ -130,13 +142,13 @@
                             </h3>
                         </div>
                         <div class="desc-img">
-                            <img src="./images/three-img.png" class="three-img">
+                            <img src="./images/landing-page/three-img.png" class="three-img" loading="lazy">
                         </div>
                     </div>
                     
-                    <div class="box" id="box">
-                        <div class="box-number">
-                            <img class="hexagon" src="./images/hexagon-circles.png" alt="hex">
+                    <div class="box">
+                        <div class="box-number"> 
+                            <img class="hexagon" src="./images/hexagon-circles.png" alt="hex" loading="lazy">
                             <p class="circle"> 04 </p>
                         </div>
                         <div class="desc">
@@ -150,13 +162,13 @@
                             </h3>
                         </div>
                         <div class="desc-img">
-                            <img src="./images/four-img.png" class="four-img">
+                            <img src="./images/landing-page/four-img.png" class="four-img" loading="lazy">
                         </div>
                     </div>
                     
-                    <div class="box" id="box">
+                    <div class="box">
                         <div class="box-number">
-                            <img class="hexagon" src="./images/hexagon-circles.png" alt="hex">
+                            <img class="hexagon" src="./images/hexagon-circles.png" alt="hex" loading="lazy">
                             <p class="circle"> 05 </p>
                         </div>
                         <div class="desc">
@@ -169,7 +181,7 @@
                             </h3>
                         </div>
                         <div class="desc-img">
-                            <img src="./images/five-img.png" class="five-img">
+                            <img src="./images/landing-page/five-img.png" class="five-img" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -192,13 +204,15 @@
                         <div class="footer-join">
                             <a href="#join" class="btn-join">Join our Waitlist</a>
                         </div>
+                        <div class="extension"></div>
                     </div>
                     <div class="footer-imgs">
-                        <img src="./images/footing-two.png" class="footing-two">
-                        <img src="./images/hexagon-circles.png" class="footer-hex1">
-                        <img src="./images/hexagon-circles.png" class="footer-hex2">
-                        <img src="./images/footing-one.png" class="footing-one">
+                        <img src="./images/landing-page/footing-two.png" class="footing-two" loading="lazy">
+                        <img src="./images/hexagon-circles.png" class="footer-hex1" loading="lazy">
+                        <img src="./images/hexagon-circles.png" class="footer-hex2" loading="lazy">
+                        <img src="./images/landing-page/footing-one.png" class="footing-one" loading="lazy">
                     </div>
+                    
             </section>
         </footer>
     </body>

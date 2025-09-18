@@ -8,9 +8,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize scroll animations (existing functionality)
     initScrollAnimations();
+
+    // Initialize glow animations
+    initGlowAnimation();
+
+    // Initialize Mobile menu
+    initMobileMenu();
 });
 
-// Email signup functionality - KEEP THIS IN FRONTEND
+// Email signup functionality
 function initEmailSignup() {
     const form = document.querySelector('.join-email');
     const emailInput = document.getElementById('join-email');
@@ -66,13 +72,13 @@ function initEmailSignup() {
     });
 }
 
-// Email validation - KEEP THIS IN FRONTEND
+// Email validation
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
 
-// Form state management - KEEP THIS IN FRONTEND
+// Form state management
 function setFormState(enabled) {
     const emailInput = document.getElementById('join-email');
     const submitBtn = document.querySelector('.join-btn');
@@ -89,7 +95,7 @@ function setFormState(enabled) {
     }
 }
 
-// Message display - KEEP THIS IN FRONTEND
+// Message display
 function showMessage(message, type = 'info') {
     // Remove existing messages
     const existingMessage = document.querySelector('.signup-message');
@@ -149,7 +155,7 @@ function showMessage(message, type = 'info') {
 }
 
 function initScrollAnimations() {
-    // Intersection Observer for fade-in animations (boxes)
+    // Intersection Observer for fade-in animations (boxes only)
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -166,6 +172,29 @@ function initScrollAnimations() {
     // Observe all boxes
     const boxes = document.querySelectorAll('.box');
     boxes.forEach(el => observer.observe(el));
+
+    // Separate observer for hero animations
+    const heroObserverOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Trigger staggered animations for hero elements
+                animateHeroElements();
+                // Only observe once
+                heroObserver.unobserve(entry.target);
+            }
+        });
+    }, heroObserverOptions);
+
+    // Observe the hero container
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        heroObserver.observe(hero);
+    }
 
     // Separate observer for footer text animations
     const footerObserverOptions = {
@@ -191,7 +220,25 @@ function initScrollAnimations() {
     }
 }
 
-// Function to animate footer elements with stagger
+// Function to animate hero elements with stagger
+function animateHeroElements() {
+    const heroElements = [
+        '.hero-heading',
+        '.hero-text', 
+    ];
+
+    heroElements.forEach((selector, index) => {
+        const element = document.querySelector(selector);
+        if (element) {
+            // Add a small delay for each element
+            setTimeout(() => {
+                element.classList.add('slide-in');
+            }, index * 100); // 200ms delay between each element
+        }
+    });
+}
+
+// Function to animate footer elements with stagger (your existing function)
 function animateFooterElements() {
     const footerElements = [
         '.footer-heading',
@@ -208,5 +255,55 @@ function animateFooterElements() {
                 element.classList.add('slide-in');
             }, index * 100); // 200ms delay between each element
         }
+    });
+}
+
+function initGlowAnimation() {
+    const glowElement = document.querySelector('.home-glow');
+
+    if (!glowElement) return;
+
+    const glowObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+            } else {
+                entry.target.style.animationPlayState = 'paused';
+            }
+        });
+    }, {
+        threshold: 0.3,
+        rootMargin: '50px'
+    });
+    glowObserver.observe(glowElement);
+}
+
+function initMobileMenu() {
+    const mobileToggle = document.querySelector('.mobile-menu');
+    const navbar = document.querySelector('.navbar');
+    
+    if (!mobileToggle || !navbar) return;
+    
+    mobileToggle.addEventListener('click', function() {
+        // Toggle active classes
+        navbar.classList.toggle('active');
+        mobileToggle.classList.toggle('active');
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.header')) {
+            navbar.classList.remove('active');
+            mobileToggle.classList.remove('active');
+        }
+    });
+    
+    // Close menu when clicking on a link
+    const navLinks = navbar.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navbar.classList.remove('active');
+            mobileToggle.classList.remove('active');
+        });
     });
 }
