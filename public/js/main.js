@@ -169,7 +169,7 @@ function initScrollAnimations() {
         });
     }, observerOptions);
 
-    // Observe all boxes
+    // Observe all boxes (hero boxes and expect boxes)
     const boxes = document.querySelectorAll('.box');
     boxes.forEach(el => observer.observe(el));
 
@@ -194,6 +194,41 @@ function initScrollAnimations() {
     const hero = document.querySelector('.hero');
     if (hero) {
         heroObserver.observe(hero);
+    }
+
+    // Event section animations
+    const eventObserverOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const eventObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateEventElements();
+                eventObserver.unobserve(entry.target);
+            }
+        });
+    }, eventObserverOptions);
+
+    const eventSection = document.querySelector('.event');
+    if (eventSection) {
+        eventObserver.observe(eventSection);
+    }
+
+    // Expectation section animations
+    const expectObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateExpectElements();
+                expectObserver.unobserve(entry.target);
+            }
+        });
+    }, eventObserverOptions);
+
+    const expectSection = document.querySelector('.expectation');
+    if (expectSection) {
+        expectObserver.observe(expectSection);
     }
 
     // Separate observer for footer text animations
@@ -224,7 +259,10 @@ function initScrollAnimations() {
 function animateHeroElements() {
     const heroElements = [
         '.hero-heading',
-        '.hero-text', 
+        '.hero-text',
+        '.community',
+        '.hero2-heading',
+        '.hero2-text'
     ];
 
     heroElements.forEach((selector, index) => {
@@ -233,12 +271,47 @@ function animateHeroElements() {
             // Add a small delay for each element
             setTimeout(() => {
                 element.classList.add('slide-in');
-            }, index * 100); // 200ms delay between each element
+            }, index * 150);
         }
     });
 }
 
-// Function to animate footer elements with stagger (your existing function)
+// Function to animate event elements with stagger
+function animateEventElements() {
+    const eventElements = [
+        '.event-head',
+        '.event-text',
+        '.session'
+    ];
+
+    eventElements.forEach((selector, index) => {
+        const element = document.querySelector(selector);
+        if (element) {
+            setTimeout(() => {
+                element.classList.add('slide-in');
+            }, index * 150);
+        }
+    });
+}
+
+// Function to animate expectation elements with stagger
+function animateExpectElements() {
+    const expectElements = [
+        '.expect-head',
+        '.expect-text'
+    ];
+
+    expectElements.forEach((selector, index) => {
+        const element = document.querySelector(selector);
+        if (element) {
+            setTimeout(() => {
+                element.classList.add('slide-in');
+            }, index * 150);
+        }
+    });
+}
+
+// Function to animate footer elements with stagger
 function animateFooterElements() {
     const footerElements = [
         '.footer-heading',
@@ -253,7 +326,7 @@ function animateFooterElements() {
             // Add a small delay for each element
             setTimeout(() => {
                 element.classList.add('slide-in');
-            }, index * 100); // 200ms delay between each element
+            }, index * 100);
         }
     });
 }
@@ -281,29 +354,48 @@ function initGlowAnimation() {
 function initMobileMenu() {
     const mobileToggle = document.querySelector('.mobile-menu');
     const navbar = document.querySelector('.navbar');
-    
+    const joinBtn = document.querySelector('.join');
+
     if (!mobileToggle || !navbar) return;
-    
+
     mobileToggle.addEventListener('click', function() {
-        // Toggle active classes
         navbar.classList.toggle('active');
-        mobileToggle.classList.toggle('active');
+        
+        // Clone join button into mobile menu if not already there
+        if (navbar.classList.contains('active') && !navbar.querySelector('.join')) {
+            const joinClone = joinBtn.cloneNode(true);
+            navbar.appendChild(joinClone);
+        }
+        
+        // Remove join button if closing
+        if (!navbar.classList.contains('active')) {
+            const clonedJoin = navbar.querySelector('.join');
+            if (clonedJoin) {
+                clonedJoin.remove();
+            }
+        }
     });
     
     // Close menu when clicking outside
     document.addEventListener('click', function(event) {
-        if (!event.target.closest('.header')) {
+        if (!event.target.closest('header')) {
             navbar.classList.remove('active');
-            mobileToggle.classList.remove('active');
+            const clonedJoin = navbar.querySelector('.join');
+            if (clonedJoin) {
+                clonedJoin.remove();
+            }
         }
     });
     
-    // Close menu when clicking on a link
+    // Close menu when clicking on links
     const navLinks = navbar.querySelectorAll('a');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navbar.classList.remove('active');
-            mobileToggle.classList.remove('active');
+            const clonedJoin = navbar.querySelector('.join');
+            if (clonedJoin) {
+                clonedJoin.remove();
+            }
         });
     });
 }

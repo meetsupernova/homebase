@@ -15,10 +15,11 @@ body {
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 a:visited{
-    color: inherit;
+    text-decoration: none;
 }
 
 ul {
@@ -55,25 +56,27 @@ html {
     transform: scale(.95)
 }
 
-/* header */
-.header {
+header {
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1001;
     background-color: #86EAD4;
+    width: 100%;
+}
+
+/* header */
+.header {
     padding: 12px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     max-width: 100%;
 }
 
 .title{
-    margin: left;
     margin-left: 15%;
     display: flex;
     align-items: center;
-    justify-content: left;
 }
 
 .companyname{
@@ -92,11 +95,11 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 15%;
+    gap: 30px;
 }
 
 .join{
-    margin: right;
+    margin-right: 15%;
     justify-content: right; 
     display: flex;
     height: var(--Tokens-Space-button-height-2, 32px);
@@ -124,20 +127,16 @@ html {
     color: var(--Colors-Neutral-Neutral-1, #FBFDFC);
 }
 
-.community-btn{
-    margin-right: 15px;
+.home-btn, .events-btn{
     color: #000;
 
-    /* Typography/3/Bold */
+    /* Typography/2/Regular */
     font-family: var(--Typography-Font-family-text, Inter);
-    font-size: var(--Typography-Font-size-3, 16px);
+    font-size: var(--Typography-Font-size-2, 14px);
     font-style: normal;
-    font-weight: 500;
-    line-height: var(--Typography-Line-height-3, 24px); /* 150% */
-    letter-spacing: var(--Typography-Letter-spacing-3, 0);
-}
-.community-btn:visited{
-    text-decoration: none;
+    font-weight: 400;
+    line-height: var(--Typography-Line-height-2, 20px); /* 142.857% */
+    letter-spacing: var(--Typography-Letter-spacing-2, 0);
 }
 
 /* Hamburger menu button - hidden on desktop */
@@ -158,68 +157,62 @@ html {
     border-radius: 2px;
 }
 
-/* mobile header section */
-@media (max-width: 1200px) {
-    
-}
-
 @media (max-width: 600px) {
-    .header{
+    .header {
         max-width: 100%;
-        position: relative;
+        padding: 12px 20px; 
     }
 
-    .title{
+    .title {
         margin-left: 0%;
     }
-    
-    .navbar {
-        display: flex; /* Always rendered but hidden */
+
+    .navbar, .join {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: flex;
+        z-index: 1001;
+    }
+
+    .navbar.active {
+        display: flex;
         position: fixed;
-        top: 60px; /* Adjust based on header height */
+        top: 50px;
         left: 0;
         right: 0;
         width: 100%;
         background-color: #86EAD4;
         flex-direction: column;
-        padding: 20px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding: 15px;
         z-index: 999;
-        margin: 0;
-        
-        /* Animation properties */
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        transform: translateY(-10px);
-        transition: all 0.3s ease-out;
+    }
+
+    .navbar.active::before {
+        content: '';
+        position: fixed;
+        top: 170px; /* Start below the header */
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        z-index: -1;
     }
     
-    .navbar.active {
-        max-height: 200px; /* Adjust based on content height */
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    /* Animate individual menu items */
-    .community-btn,
-    .join {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.3s ease-out, transform 0.3s ease-out;
-        transition-delay: 0.1s; /* Delay for stagger effect */
-    }
-    
-    .navbar.active .community-btn {
-        opacity: 1;
-        transform: translateY(0);
-        transition-delay: 0.15s;
+    /* Simple menu item styling */
+    .navbar.active .home-btn,
+    .navbar.active .events-btn {
+        margin-bottom: 15px;
+        text-align: center;
     }
     
     .navbar.active .join {
-        opacity: 1;
-        transform: translateY(0);
-        transition-delay: 0.25s; /* Later delay for second item */
+        width: 100%;
+        justify-content: center;
+        margin: 15px 0 0 0;
     }
 }
 
@@ -338,4 +331,198 @@ html {
         line-height: var(--Typography-Line-height-3, 24px); /* 150% */
         letter-spacing: var(--Typography-Letter-spacing-3, 0);
     }
+}
+
+/* Footer Section */
+
+.footer{
+    background: linear-gradient(#fff 10%,  #86EAD4 35%, #87EAD4 100%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    position: relative;
+    
+}
+
+.footer-desc{
+    
+    margin-top: 265px;
+    display: flex;
+    flex-direction: column;
+    padding: 80px;
+    align-content: center;
+    z-index: 1;
+}
+
+.footer-heading{
+    color: var(--Colors-Sage-11, #5F6563);
+    text-align: center;
+
+    /* Typography/5/Bold */
+    font-family: var(--Typography-Font-family-text, Inter);
+    font-size: var(--Typography-Font-size-5, 20px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: var(--Typography-Line-height-5, 28px); /* 140% */
+    letter-spacing: var(--Typography-Letter-spacing-5, -0.08px);
+}
+
+.footer-text1{
+    color: var(--Colors-Sage-12, #1A211E);
+    text-align: center;
+    margin-top: 40px;
+
+    font-family: var(--Typography-Font-family-text, Inter);
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 60px; /* 120% */
+    letter-spacing: var(--Typography-Letter-spacing-8, -0.16px);
+}
+
+.footer-text2{
+    color: var(--Colors-Sage-12, #1A211E);
+    text-align: center;
+    
+
+    font-family: var(--Typography-Font-family-text, Inter);
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 60px; /* 120% */
+    letter-spacing: var(--Typography-Letter-spacing-8, -0.16px);
+}
+
+.footer-join {
+    display: flex;
+    justify-content: center; /* centers horizontally */
+    margin-top: 40px;        /* optional spacing above button */
+}
+
+.footer-join > .btn-join{
+    display: flex;
+    height: var(--Tokens-Space-button-height-4, 48px);
+    background-color: #16433C;
+    padding: 0 var(--Spacing-5, 24px);
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    transition: 0.3s;
+    color: var(--Colors-Neutral-Neutral-1, #FBFDFC);
+
+    /* Typography/4/Medium */
+    font-family: var(--Typography-Font-family-text, Inter);
+    font-size: var(--Typography-Font-size-4, 18px);
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--Typography-Line-height-4, 26px); /* 144.444% */
+    letter-spacing: var(--Typography-Letter-spacing-4, -0.04px);
+}
+
+.btn-join:hover{
+    opacity: 0.8;
+}
+
+.btn-join:active{
+    transform: scale(.95)
+}
+
+.extension{
+    height: 80px;
+}
+
+.footer-imgs{
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    overflow-x: hidden
+}
+
+.footing-one{
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    flex-shrink: 0;
+
+    bottom: 0%;
+
+}
+
+.footing-two{
+    position: absolute;
+    width: 182.5px;
+    height: 365px;
+    flex-shrink: 0;
+
+    top: 15%;
+    right: 0%;
+}
+
+.footer-hex1{
+    position: absolute;
+    width: 95px;
+    height: 108px;
+    
+    top: 40%;
+    left: 15%;
+}
+
+.footer-hex2{
+    position: absolute;
+    width: 95px;
+    height: 108px;
+
+    bottom: 10%;
+    right: 15%;
+}
+
+@media (max-width: 600px) {
+    .footer-hex1, .footer-hex2{
+        display: none;
+    }
+    .footer-desc{
+        padding: 0;
+        padding-bottom: 50px;
+    }
+    .extension{
+        height: 20px;
+    }       
+}
+
+/* box animation */
+
+.footer-heading,
+.footer-text1,
+.footer-text2,
+.footer-join {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.footer-heading.slide-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.1s;
+}
+
+.footer-text1.slide-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+
+.footer-text2.slide-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+}
+
+.footer-join.slide-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.7s;
 }
