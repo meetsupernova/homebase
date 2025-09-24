@@ -107,24 +107,6 @@ function showMessage(message, type = 'info') {
     const messageEl = document.createElement('div');
     messageEl.className = `signup-message signup-message--${type}`;
     messageEl.textContent = message;
-    
-    // Style the message
-    Object.assign(messageEl.style, {
-        position: 'fixed',
-        top: '20px',
-        right: '20px',
-        padding: '12px 20px',
-        borderRadius: '8px',
-        color: '#fff',
-        fontWeight: '500',
-        zIndex: '10000',
-        maxWidth: '400px',
-        fontSize: '14px',
-        lineHeight: '1.4',
-        boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
-        transform: 'translateX(100%)',
-        transition: 'transform 0.3s ease-out'
-    });
 
     // Set background color based on type
     if (type === 'success') {
@@ -140,12 +122,12 @@ function showMessage(message, type = 'info') {
 
     // Animate in
     setTimeout(() => {
-        messageEl.style.transform = 'translateX(0)';
+        messageEl.classList.add('show');
     }, 10);
 
     // Auto remove after 5 seconds
     setTimeout(() => {
-        messageEl.style.transform = 'translateX(100%)';
+        messageEl.classList.remove('show');
         setTimeout(() => {
             if (messageEl.parentNode) {
                 messageEl.remove();
