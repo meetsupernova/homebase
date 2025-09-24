@@ -2,11 +2,11 @@
   "routes": [
     {
       "src": "/",
-      "dest": "/landing-page.html"
+      "dest": "/public/index.html"
     },
     {
       "src": "/community",
-      "dest": "/community.html"
+      "dest": "/public/community.html"
     }
   ]
 }
