@@ -122,7 +122,6 @@ html {
 
 .join {
     margin-right: 15%;
-    justify-content: right;
     display: flex;
     height: 32px;
     padding: 0 12px;
@@ -131,29 +130,26 @@ html {
     gap: 8px;
     border-radius: 4px;
     background: #16433C;
-}
-
-.btn-join {
     color: #FBFDFC;
     font-family: Inter;
     font-size: 14px;
-    font-style: normal;
     font-weight: 500;
     line-height: 20px;
     cursor: pointer;
     transition: 0.3s;
+    border: none; /* Remove default button border */
 }
 
-.btn-join:visited {
-    color: #FBFDFC;
-}
-
-.btn-join:hover {
+.join:hover {
     opacity: 0.8;
 }
 
-.btn-join:active {
+.join:active {
     transform: scale(.95);
+}
+
+.join:visited {
+    color: #FBFDFC;
 }
 
 .mobile-menu {
@@ -429,7 +425,7 @@ html {
     .navbar.active::before {
         content: '';
         position: fixed;
-        top: 170px;
+        top: 150px;
         left: 0;
         right: 0;
         bottom: 0;

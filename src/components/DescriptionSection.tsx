@@ -37,35 +37,35 @@ export default function DescriptionSection() {
       number: '01',
       heading: 'Select your funding preferences',
       text: 'You set your own preferences for the types of opportunities you\'re looking for.',
-      image: '/public/images/landing-page/one-img.png',
+      image: '/images/landing/one-img.png',
       className: 'box-1'
     },
     {
       number: '02',
       heading: 'Tell us about your setup',
       text: 'We learn about your business, stage, goals, and founder background in minutes.',
-      image: '/public/images/landing-page/two-img.png',
+      image: '/images/landing/two-img.png',
       className: 'box-2'
     },
     {
       number: '03',
       heading: 'Get matched with opportunities',
       text: 'Supernova scans thousands of funding sources—grants, accelerators, pitch competitions—and filters the best ones for you.',
-      image: '/public/images/landing-page/three-img.png',
+      image: '/images/landing/three-img.png',
       className: 'box-3'
     },
     {
       number: '04',
       heading: 'Search Entire Funding Database',
       text: 'Prefer to browse on your own? Dive into our full database of grants, accelerators, and pitch competitions—filter by your industry, traction level, or locations. Curiosity welcome.',
-      image: '/public/images/landing-page/four-img.png',
+      image: '/images/landing/four-img.png',
       className: 'box-4'
     },
     {
       number: '05',
       heading: 'AI-Powered Application Support',
       text: 'No more blank pages. We\'ll help you write compelling applications, prep your pitch, and generate business docs that make you stand out.',
-      image: '/public/images/landing-page/five-img.png',
+      image: '/images/landing/five-img.png',
       className: 'box-5'
     }
   ]

@@ -13,7 +13,7 @@ export default function AnimatedSection({
   children, 
   className = '', 
   threshold = 0.1,
-  delay = 150
+  delay = 200
 }: AnimatedSectionProps) {
   const elementRef = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
@@ -42,7 +42,7 @@ export default function AnimatedSection({
   useEffect(() => {
     if (isVisible && elementRef.current) {
       const animatedElements = elementRef.current.querySelectorAll(
-        '.hero-heading, .hero-text, .footer-heading, .footer-text1, .footer-text2, .footer-join'
+        '.hero-heading, .hero-text, .community, .hero2-heading, .hero2-text, .box, .event-head, .event-text, .session, .expect-head, .expect-text, .footer-heading, .footer-text1, .footer-text2, .footer-join'
       )
       
       animatedElements.forEach((element, index) => {

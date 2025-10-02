@@ -398,7 +398,9 @@
     }
 }
 
+
 /* Initial hidden state for all animated elements */
+
 .hero-heading,
 .hero.text,
 .community,
@@ -409,12 +411,12 @@
 .event-text,
 .session,
 .expect-head,
-.expect-text,
-.expect-boxes .box {
+.expect-text,.box {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
+
 
 /* Animated state when visible */
 .hero-heading.slide-in,
@@ -422,13 +424,13 @@
 .community.slide-in,
 .hero2-heading.slide-in,
 .hero2-text.slide-in,
-.hero-boxes .box.fade-in,
+.hero-boxes .box.slide-in,
 .event-head.slide-in,
 .event-text.slide-in,
 .session.slide-in,
 .expect-head.slide-in,
 .expect-text.slide-in,
-.expect-boxes .box.fade-in {
+.expect-boxes .box.slide-in {
     opacity: 1;
     transform: translateY(0);
 }

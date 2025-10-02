@@ -38,28 +38,28 @@ export default function Footer() {
         </AnimatedSection>
         <div className="footer-imgs">
           <Image 
-            src="/public/images/landing-page/footing-two.png" 
+            src="/images/landing/footing-two.png" 
             className="footing-two"
             width={183}
             height={365}
             alt="Footer decoration"
           />
           <Image 
-            src="/public/images/hexagon-circles.png" 
+            src="/images/hexagon-circles.png" 
             className="footer-hex1"
             width={95}
             height={108}
             alt="Hexagon decoration"
           />
           <Image 
-            src="/public/images/hexagon-circles.png" 
+            src="/images/hexagon-circles.png" 
             className="footer-hex2"
             width={95}
             height={108}
             alt="Hexagon decoration"
           />
           <Image 
-            src="/public/images/landing-page/footing-one.png" 
+            src="/images/landing/footing-one.png" 
             className="footing-one"
             width={250}
             height={250}

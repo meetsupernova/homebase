@@ -14,17 +14,17 @@ export default function HomePage() {
           Smarter Funding for Early-Stage Founders
         </h1>
         <p className="hero-text">
-          We're your AI co-pilot for fundraising - matching you with the 
+          We&apos;re your AI co-pilot for fundraising - matching you with the 
           best fit grants, accelerators, and pitch opportunities, and 
           helping you actually win them.
         </p>
         <div className="home">
           <Image 
             className="home-img" 
-            src="/public/images/landing-page/home-img.png" 
+            src="/images/landing/home-img.png" 
             alt="Supernova dashboard preview" 
-            width={800} 
-            height={600}
+            width={2100} 
+            height={1800}
             priority
           />
           <div className="home-glow"></div>

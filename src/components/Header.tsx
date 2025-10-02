@@ -35,7 +35,7 @@ export default function Header() {
       <div className="header-content">
         <div className="title">
           <div className="logo">
-            <Image src="/public/images/icon.png" alt="Supernova logo" width={25} height={25} />
+            <Image src="/images/icon.png" alt="Supernova logo" width={25} height={25} />
           </div>
           <div className="company-name">
             <p>Supernova</p>
@@ -53,28 +53,15 @@ export default function Header() {
             </Link>
           </div>
           <div>
-            <Link 
-              href="/community"
-              className={`nav-link ${pathname === '/community' ? 'active' : ''}`}
-              onClick={closeMobileMenu}
-            >
+            <Link href="/community" className={`nav-link ${pathname === '/community' ? 'active' : ''}`} onClick={closeMobileMenu}>
               Events
             </Link>
           </div>
-          {mobileMenuOpen && (
-            <div className="mobile-join">
-              <span onClick={scrollToJoin}>
-                Join Waitlist
-              </span>
-            </div>
-          )}
         </div>
         
-        <div className="join">
-          <span className="btn-join" onClick={scrollToJoin}>
-            Join Waitlist
-          </span>
-        </div>
+        <button className="join" onClick={scrollToJoin}>
+          Join Waitlist
+        </button>
         
         <button 
           className="mobile-menu"
@@ -87,23 +74,7 @@ export default function Header() {
         </button>
       </div>
       
-      {mobileMenuOpen && (
-        <div 
-          className="mobile-backdrop" 
-          onClick={closeMobileMenu}
-          style={{
-            position: 'fixed',
-            top: '170px',
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: 'rgba(0, 0, 0, 0.3)',
-            backdropFilter: 'blur(8px)',
-            WebkitBackdropFilter: 'blur(8px)',
-            zIndex: -1,
-          }}
-        />
-      )}
+      
     </header>
   )
 }
