@@ -7,6 +7,8 @@ export default function DescriptionSection() {
   const containerRef = useRef<HTMLDivElement>(null)
   
   useEffect(() => {
+    const container = containerRef.current // Copy to local variable
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -21,13 +23,13 @@ export default function DescriptionSection() {
       { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     )
     
-    if (containerRef.current) {
-      observer.observe(containerRef.current)
+    if (container) {
+      observer.observe(container)
     }
     
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current)
+      if (container) {
+        observer.unobserve(container)
       }
     }
   }, [])

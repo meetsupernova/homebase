@@ -19,6 +19,8 @@ export default function AnimatedSection({
   const [isVisible, setIsVisible] = useState(false)
   
   useEffect(() => {
+    const element = elementRef.current // Copy to local variable
+    
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -28,13 +30,13 @@ export default function AnimatedSection({
       { threshold, rootMargin: '0px 0px -50px 0px' }
     )
     
-    if (elementRef.current) {
-      observer.observe(elementRef.current)
+    if (element) {
+      observer.observe(element)
     }
     
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current)
+      if (element) {
+        observer.unobserve(element)
       }
     }
   }, [threshold])

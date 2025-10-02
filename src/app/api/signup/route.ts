@@ -125,15 +125,17 @@ export async function POST(request: NextRequest) {
       { status: 201 }
     )
 
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const err = error as { message?: string; code?: string; stack?: string }
+    
     console.error('Signup error:', {
-      message: error.message,
-      code: error.code,
-      stack: error.stack,
+      message: err.message,
+      code: err.code,
+      stack: err.stack,
     })
 
     // Handle duplicate email
-    if (error.code === '23505') {
+    if (err.code === '23505') {
       return NextResponse.json(
         {
           success: false,
@@ -146,7 +148,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       {
         success: false,
-        message: 'Something went wrong. Please try again later.'
+      message: 'Something went wrong. Please try again later.'
       },
       { status: 500 }
     )
