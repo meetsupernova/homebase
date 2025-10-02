@@ -417,7 +417,6 @@
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-
 /* Animated state when visible */
 .hero-heading.slide-in,
 .hero.text.slide-in,
