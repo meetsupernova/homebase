@@ -294,7 +294,7 @@
     letter-spacing: var(--Typography-Letter-spacing-8, -0.16px);
 }
 
-.box{
+.description-boxes >.box{
     margin-top: 40px;
     width: 71.5%;
     padding: 64px;
@@ -348,7 +348,10 @@
 .desc{
     text-align: left;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    
+    /*grid-template-columns: 1fr 1fr;*/
+
+    flex-direction: column;
     justify-content: center;
     position: relative;
     padding: 20px 0px;

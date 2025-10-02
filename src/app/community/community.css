@@ -67,7 +67,8 @@
     margin: 60px auto;
 }
 
-.box{
+.hero-boxes > .box,
+.expect-boxes > .box {
     display: flex;
     width: 322px;
     height: auto;
