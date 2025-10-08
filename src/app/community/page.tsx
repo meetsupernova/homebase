@@ -1,7 +1,9 @@
-import Footer from '@/components/Footer'
 import AnimatedSection from '@/components/AnimatedSection'
+import Footer_Newsletter from '@/components/Footer_Newsletter'
 import Image from 'next/image'
 import './community.css'
+import '@/components/footer_newsletter.css'
+
 
 export const metadata = {
   title: 'Community Events - Supernova',
@@ -163,7 +165,8 @@ export default function CommunityPage() {
           </div>
         </section>
       </AnimatedSection>
-      <Footer/>
+      <Footer_Newsletter />
     </main>
+    
   )
 }

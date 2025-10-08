@@ -58,14 +58,14 @@ export default function DescriptionSection() {
     },
     {
       number: '04',
-      heading: 'Search Entire Funding Database',
+      heading: 'Search entire funding database',
       text: 'Prefer to browse on your own? Dive into our full database of grants, accelerators, and pitch competitions—filter by your industry, traction level, or locations. Curiosity welcome.',
       image: '/images/landing/four-img.png',
       className: 'box-4'
     },
     {
       number: '05',
-      heading: 'AI-Powered Application Support',
+      heading: 'AI-Powered application support',
       text: 'No more blank pages. We\'ll help you write compelling applications, prep your pitch, and generate business docs that make you stand out.',
       image: '/images/landing/five-img.png',
       className: 'box-5'

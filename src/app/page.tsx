@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 import AnimatedSection from '@/components/AnimatedSection'
 import Image from 'next/image'
 import './landing/landing-page.css'
+import '@/components/footer.css'
 
 export default function HomePage() {
   return (
