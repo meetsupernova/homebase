@@ -95,7 +95,7 @@ export default function Footer_Newsletter() {
               Stay in the loop
             </p>
             <p className="footer-text">
-              Don't miss future events -- Join our newsletter and get
+              Don&apos;t miss future events -- Join our newsletter and get
               notified when new sessions drop and startup insights.
             </p>
             <div className="footer-join">
