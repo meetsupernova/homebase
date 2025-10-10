@@ -12,12 +12,11 @@ export default function HomePage() {
       {/* Hero Section */}
       <AnimatedSection className="hero">
         <h1 className="hero-heading">
-          Smarter Funding for Early-Stage Founders
+          Supercharge your Non-VC Funding
         </h1>
         <p className="hero-text">
-          We&apos;re your AI co-pilot for fundraising - matching you with the 
-          best fit grants, accelerators, and pitch opportunities, and 
-          helping you actually win them.
+          Every founder&apos;s dream deserves a change. We help these dreams 
+          come true by intelligently matching them with non-VC funding.
         </p>
         <div className="home">
           <Image 

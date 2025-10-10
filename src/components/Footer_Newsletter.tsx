@@ -95,7 +95,7 @@ export default function Footer_Newsletter() {
               Stay in the loop
             </p>
             <p className="footer-text">
-              Don&apos;t miss future events -- Join our newsletter and get
+              Don&apos;t miss future events -- Join our waitlist and get
               notified when new sessions drop and startup insights.
             </p>
             <div className="footer-join">
@@ -117,7 +117,7 @@ export default function Footer_Newsletter() {
                   className={`join-btn ${isSubmitting ? 'submitting' : ''}`}
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Subscribing...' : '+ Subscribe to newsletter'}
+                  {isSubmitting ? 'Joining...' : '+ Join our waitlist'}
                 </button>
               </form>
               <p className="join-text"> 

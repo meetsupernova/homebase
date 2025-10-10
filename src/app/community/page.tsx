@@ -10,7 +10,21 @@ export const metadata = {
   description: 'Join our community events where funders and future teammates connect.',
 }
 
+
+/* for the event button to the newsletter.
 export default function CommunityPage() {
+  const scrollToJoin = () => {
+    if (window.location.pathname !== '/') {
+      window.location.href = '/'
+    } else {
+      const joinSection = document.getElementById('join')
+      if (joinSection) {
+        joinSection.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+  }
+    */
+
   const communityBoxData = [
     {
       icon: '/images/community/lightbulb.png',
@@ -61,7 +75,7 @@ export default function CommunityPage() {
           Community Events
         </h1>
         <p className="hero-text">
-          Where funders and future teammates connect.
+          Where founders and future teammates connect.
         </p>
         <div className="community">
           <Image 
@@ -116,7 +130,7 @@ export default function CommunityPage() {
             </p>
             <div className="session-date">
               <Image src="/images/community/calendar_today.png" width={24} height={24} alt="Calendar icon" />
-              <p className="session-date-text">October 9, 2025 at 5:00pm PST</p>
+              <p className="session-date-text">TBD</p>
             </div>
             <div className="session-link">
               <Image src="/images/community/globe.png" width={24} height={24} alt="Globe icon" />
@@ -129,7 +143,7 @@ export default function CommunityPage() {
             <div className="session-register">
               <button className="register-btn">
                 <Image src="/images/community/open_in_new.png" width={20} height={20} alt="External link" />
-                Register on Eventbrite
+                Sign up to get a reminder.
               </button>
             </div>
           </div>

@@ -93,6 +93,7 @@ export default function EmailSignup() {
         </h1>
         <p className="join-text">
           Join hundreds of founders waiting to unlock smarter, faster fundraising.
+          You'll also gain access to our newsletter.
         </p>
         <form className="join-email" onSubmit={handleSubmit}>
           <input
