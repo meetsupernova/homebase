@@ -11,6 +11,19 @@
     margin: 0 auto;
 }
 
+.hero-heading{
+    margin: 0 auto;
+
+    color: var(--Colors-Sage-12, #1A211E);
+    text-align: center;
+    font-family: var(--Typography-Font-family-text, Inter);
+    font-size: var(--Typography-Font-size-9, 60px);
+    font-style: normal;
+    font-weight: 900;
+    line-height: var(--Typography-Line-height-9, 60px); /* 100% */
+    letter-spacing: var(--Typography-Letter-spacing-9, -0.4px);
+}
+
 .hero2-heading {
     width: clamp(40%, 35vw, 90%);
     margin: 0 auto;
@@ -43,16 +56,30 @@
 
 @media (max-width: 1200px) {
     .hero-heading, .hero-text, .hero2-heading, .hero2-text{
-        width: 70%;
+        width: 90%;
     }
 }
 
 @media (max-width: 600px) {
+    .hero{
+        max-width: 100%;
+    }
+    .hero-heading {
+        width: 90%;
+        font-size: clamp(30px, 8vw, 36px);
+        font-weight: 700;
+        line-height: 1.1;
+        letter-spacing: -0.12px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+
     .community{
         border-radius: 10px;
         padding: 0;
-        width: 90%
+        width: 98%
     }  
+
     .community-img {
         width: 100%; 
     }
@@ -296,9 +323,15 @@
 }
 
 @media (max-width: 600px) {
+    .event{
+        width: 100%;
+        padding: 50px 5px;
+    }
     .session{
         width: 100%;
+        padding: 28px 5px;
     }
+    
 }
 
 .expect-head{

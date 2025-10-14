@@ -118,7 +118,7 @@
     border-radius: 24px;
     background: var(--Colors-Mint-Alpha-9, rgba(0, 211, 165, 0.47));
     width: 71.2%;
-    padding: 2vh 2vw;
+    padding: 20px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -130,8 +130,8 @@
     text-align: center;
     overflow: visible;
     max-width: 90%;
-    padding-top: 2vh;
-    padding-bottom: 1vh;
+    padding-top: 24px;
+
     color: var(--Colors-Sage-12, #1A211E);
     text-align: center;
 
@@ -149,8 +149,7 @@
     color: #1A211E;
     text-align: center;
     width: 100%;
-    padding-top: 1vh;
-    padding-bottom: 1vh;
+    padding: 12px;
     color: var(--Colors-Sage-11, #5F6563);
     text-align: center;
 
@@ -184,23 +183,6 @@
     width: 100%;
     outline: none;
     font-size: 16px;   
-}
-
-.join-email .input-email{
-    position: absolute;
-    left: 10px;
-    top: 45%;
-    transform: translateY(-50%);
-    color: #aaa;
-    transition:
-        left 0.4s ease,
-        color 0.3s ease;
-}
-
-.join-email input:valid + .input-email,
-.join-email input:focus + .input-email{
-    left: -90px;
-    color: #222;
 }
 
 .join-btn {
@@ -238,8 +220,10 @@
 
 @media (max-width: 600px) {
     .join-content{
-        width: 90%;
+        width: 95%;
+        height:
     }
+
     .join-heading{
         color: var(--Colors-Sage-12, #1A211E);
         text-align: center;
@@ -252,6 +236,7 @@
         line-height: var(--Typography-Line-height-5, 28px); /* 140% */
         letter-spacing: var(--Typography-Letter-spacing-5, -0.08px);
     }
+
     .join-text{
         color: var(--Colors-Sage-12, #1A211E);
         text-align: center;
@@ -264,10 +249,12 @@
         line-height: var(--Typography-Line-height-2, 20px); /* 142.857% */
         letter-spacing: var(--Typography-Letter-spacing-2, 0);
     }
+
     .join-email{
         width: 90%;
         gap: 20px;
     }
+
     .join-email input:valid + .input-email,
     .join-email input:focus + .input-email{
         display: none;
@@ -347,7 +334,7 @@
 
 .desc{
     text-align: left;
-    display: grid;
+    display: block;
     
     /*grid-template-columns: 1fr 1fr;*/
 
@@ -490,13 +477,17 @@
 }
 
 @media (max-width: 600px) {
-    .box{
-        width: 90%;
+    
+
+    .description-boxes > .box{
+        width: 95%;
         padding: 24px 24px;
     }
+
     .box > .desc-img{
         padding: 12px 12px;
     }
+
     .one-img,
     .two-img,
     .three-img,

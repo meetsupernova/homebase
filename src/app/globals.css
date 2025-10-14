@@ -271,8 +271,77 @@ html {
     transform: translateX(0);
 }
 
-/* Mobile styles */
+/* Mobile responsive */
 @media (max-width: 600px) {
+    .header-content {
+        max-width: 100%;
+        padding: 12px 20px;
+    }
+    
+    .title {
+        margin-left: 0%;
+    }
+    
+    .navbar, .join {
+        display: none;
+    }
+    
+    .mobile-menu {
+        display: flex;
+        z-index: 1001;
+    }
+    
+    .navbar.active {
+        display: flex;
+        position: fixed;
+        top: 50px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: #86EAD4;
+        flex-direction: column;
+        padding: 15px;
+        z-index: 999;
+    }
+    
+    .navbar.active::before {
+        content: '';
+        position: fixed;
+        top: 150px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        z-index: -1;
+    }
+    
+    .navbar.active .nav-link {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    
+    .navbar.active .join {
+        width: 100%;
+        justify-content: center;
+        margin: 15px 0 0 0;
+    }
+    
+    /* Add these message styles for mobile */
+    .message {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        max-width: none;
+        text-align: center;
+        transform: translateY(-100%); /* Change from translateX to translateY */
+    }
+    
+    .message.visible {
+        transform: translateY(0); /* Slide down instead of from right */
+    }
+    
     .signup-message {
         top: 10px;
         left: 10px;

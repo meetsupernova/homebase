@@ -93,13 +93,14 @@ export default function EmailSignup() {
         </h1>
         <p className="join-text">
           Join hundreds of founders waiting to unlock smarter, faster fundraising.
-          You'll also gain access to our newsletter.
+          You&apos;ll also gain access to our newsletter.
         </p>
         <form className="join-email" onSubmit={handleSubmit}>
           <input
             id="join-email"
             type="email"
             name="email"
+            placeholder='Enter your email address'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             onFocus={() => setFocused(true)}
@@ -107,9 +108,7 @@ export default function EmailSignup() {
             disabled={isSubmitting}
             required
           />
-          <span className={`input-email ${focused || email ? 'focused' : ''}`}>
-            Enter email
-          </span>
+
           <button 
             type="submit" 
             className={`join-btn ${isSubmitting ? 'submitting' : ''}`}

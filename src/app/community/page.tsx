@@ -1,29 +1,21 @@
+'use client'
 import AnimatedSection from '@/components/AnimatedSection'
 import Footer_Newsletter from '@/components/Footer_Newsletter'
 import Image from 'next/image'
 import './community.css'
 import '@/components/footer_newsletter.css'
 
-
-export const metadata = {
-  title: 'Community Events - Supernova',
-  description: 'Join our community events where funders and future teammates connect.',
-}
-
-
-/* for the event button to the newsletter.
 export default function CommunityPage() {
   const scrollToJoin = () => {
-    if (window.location.pathname !== '/') {
-      window.location.href = '/'
+    if (window.location.pathname !== '/community') {
+      window.location.href = '/#footer-join'
     } else {
-      const joinSection = document.getElementById('join')
-      if (joinSection) {
-        joinSection.scrollIntoView({ behavior: 'smooth' })
+      const footerSection = document.querySelector('.footer-newsletter')
+      if (footerSection) {
+        footerSection.scrollIntoView({ behavior: 'smooth' })
       }
     }
   }
-    */
 
   const communityBoxData = [
     {
@@ -141,7 +133,7 @@ export default function CommunityPage() {
               <p className="session-money-text">Free to attend</p>
             </div>
             <div className="session-register">
-              <button className="register-btn">
+              <button className="register-btn" onClick={scrollToJoin}>
                 <Image src="/images/community/open_in_new.png" width={20} height={20} alt="External link" />
                 Sign up to get a reminder.
               </button>
@@ -181,6 +173,5 @@ export default function CommunityPage() {
       </AnimatedSection>
       <Footer_Newsletter />
     </main>
-    
   )
 }

@@ -89,7 +89,7 @@ export default function Footer_Newsletter() {
     <>
       <Message message={message} type={messageType} visible={messageVisible} />
       <footer>
-        <section className="footer">
+        <section className="footer-newsletter">
           <AnimatedSection className="footer-desc">
             <p className="footer-heading">
               Stay in the loop
@@ -98,6 +98,7 @@ export default function Footer_Newsletter() {
               Don&apos;t miss future events -- Join our waitlist and get
               notified when new sessions drop and startup insights.
             </p>
+            <span id="footer-join" className="anchor"></span>
             <div className="footer-join">
               <form className="join-email" onSubmit={handleSubmit}>
                 <input
