@@ -10,7 +10,7 @@ export default function CommunityPage() {
     if (window.location.pathname !== '/community') {
       window.location.href = '/#footer-join'
     } else {
-      const footerSection = document.querySelector('.footer-newsletter')
+      const footerSection = document.querySelector('.footer-join')
       if (footerSection) {
         footerSection.scrollIntoView({ behavior: 'smooth' })
       }
@@ -63,13 +63,13 @@ export default function CommunityPage() {
     <main>
       {/* Hero Section */}
       <AnimatedSection className="hero">
-        <h1 className="hero-heading">
+        <h1 className="hero-heading" data-animate>
           Community Events
         </h1>
-        <p className="hero-text">
+        <p className="hero-text" data-animate>
           Where founders and future teammates connect.
         </p>
-        <div className="community">
+        <div className="community" data-animate>
           <Image 
             className="community-img" 
             src="/images/community/community-img.png" 
@@ -78,17 +78,18 @@ export default function CommunityPage() {
             height={400}
           />
         </div>
-        <p className="hero2-heading">
+        <p className="hero2-heading" data-animate>
           Why Join?
         </p>
-        <p className="hero2-text">
+        <p className="hero2-text" data-animate>
           Connect with likeminded individuals and build the next generation of companies.
         </p>
-        <div className="hero-boxes">
+        <div className="hero-boxes" data-animate>
           {communityBoxData.map((box, index) => (
             <div
               key={index}
               className={`box community-box ${box.className}`}
+              data-animate
             >
               <div className="box-icon">
                 <Image src={box.icon} width={24} height={24} alt="icon" />
@@ -106,14 +107,14 @@ export default function CommunityPage() {
       
       {/* Event Section */}
       <AnimatedSection>
-        <section className="event">
-          <p className="event-head">
+        <section className="event" id="event" data-animate>
+          <p className="event-head" data-animate>
             Upcoming Event
           </p>
-          <p className="event-text">
+          <p className="event-text" data-animate>
             Join our next virtual co-founder matching session!
           </p>
-          <div className="session">
+          <div className="session" data-animate>
             <div className="session-icon">
               <Image src="/images/community/videocam.png" width={44} height={44} alt="Video call icon" />
             </div>
@@ -144,18 +145,19 @@ export default function CommunityPage() {
       
       {/* Expectation Section */}
       <AnimatedSection>
-        <section className="expectation">
-          <div className="expect-head">
+        <section className="expectation" data-animate>
+          <div className="expect-head" data-animate>
             What to Expect
           </div>
-          <div className="expect-text">
+          <div className="expect-text" data-animate>
             A structured, yet casual environment designed for meaningful conversations
           </div>
-          <div className="expect-boxes">
+          <div className="expect-boxes" data-animate>
             {expectBoxData.map((box, index) => (
               <div
                 key={index}
                 className={`box expect-box ${box.className}`}
+                data-animate
               >
                 <div className="box-icon">
                   <Image src={box.icon} width={30} height={30} alt="icon" />

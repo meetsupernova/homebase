@@ -1,5 +1,4 @@
 'use client'
-
 import { useRef, useEffect, useState, ReactNode } from 'react'
 
 interface AnimatedSectionProps {
@@ -9,18 +8,18 @@ interface AnimatedSectionProps {
   delay?: number
 }
 
-export default function AnimatedSection({ 
-  children, 
-  className = '', 
+export default function AnimatedSection({
+  children,
+  className = '',
   threshold = 0.1,
   delay = 200
 }: AnimatedSectionProps) {
   const elementRef = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
-  
+ 
   useEffect(() => {
-    const element = elementRef.current // Copy to local variable
-    
+    const element = elementRef.current
+   
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -29,30 +28,29 @@ export default function AnimatedSection({
       },
       { threshold, rootMargin: '0px 0px -50px 0px' }
     )
-    
+   
     if (element) {
       observer.observe(element)
     }
-    
+   
     return () => {
       if (element) {
         observer.unobserve(element)
       }
     }
   }, [threshold])
-  
+ 
   useEffect(() => {
     if (isVisible && elementRef.current) {
-      const animatedElements = elementRef.current.querySelectorAll(
-        '.hero-heading, .hero-text, .community, .hero2-heading, .hero2-text, .box, .event-head, .event-text, .session, .expect-head, .expect-text, .footer-heading, .footer-text1, .footer-text2, .footer-text, .footer-join'
-      )
-      
+      // Select all elements with data-animate attribute
+      const animatedElements = elementRef.current.querySelectorAll('[data-animate]')
+     
       animatedElements.forEach((element, index) => {
         setTimeout(() => {
           element.classList.add('slide-in')
         }, index * delay)
       })
-      
+     
       // Handle glow animation
       const glowElement = elementRef.current.querySelector('.home-glow')
       if (glowElement) {
@@ -60,7 +58,7 @@ export default function AnimatedSection({
       }
     }
   }, [isVisible, delay])
-  
+ 
   return (
     <div ref={elementRef} className={className}>
       {children}

@@ -19,16 +19,16 @@ export default function Footer() {
     <footer>
       <section className="footer">
         <AnimatedSection className="footer-desc">
-          <p className="footer-heading">
+          <p className="footer-heading" data-animate>
             Ready to accelerate your funding?
           </p>
-          <p className="footer-text1">
+          <p className="footer-text1" data-animate>
             SUPERNOVA,
           </p>
-          <p className="footer-text2">
+          <p className="footer-text2" data-animate>
             BUILT FOR BUILDERS
           </p>
-          <div className="footer-join">
+          <div className="footer-join" data-animate>
             <span className="btn-join" onClick={scrollToJoin}>
               Join our Waitlist
             </span>

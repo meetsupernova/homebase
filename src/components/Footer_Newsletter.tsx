@@ -91,15 +91,15 @@ export default function Footer_Newsletter() {
       <footer>
         <section className="footer-newsletter">
           <AnimatedSection className="footer-desc">
-            <p className="footer-heading">
+            <p className="footer-heading" data-animate>
               Stay in the loop
             </p>
-            <p className="footer-text">
+            <p className="footer-text" data-animate>
               Don&apos;t miss future events -- Join our waitlist and get
               notified when new sessions drop and startup insights.
             </p>
             <span id="footer-join" className="anchor"></span>
-            <div className="footer-join">
+            <div className="footer-join" data-animate>
               <form className="join-email" onSubmit={handleSubmit}>
                 <input
                   id="footer-email"

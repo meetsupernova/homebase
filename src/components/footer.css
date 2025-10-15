@@ -1,6 +1,6 @@
 /* Footer Section */
 .footer {
-    background: linear-gradient(#fff 10%, #86EAD4 35%, #87EAD4 100%);
+    background: linear-gradient(0deg, #86EAD4 50%, #EEF1F0 100%);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -8,7 +8,7 @@
 }
 
 .footer-desc {
-    margin-top: 265px;
+    margin-top: 200px;
     display: flex;
     flex-direction: column;
     padding: 80px;
