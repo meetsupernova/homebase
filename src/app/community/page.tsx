@@ -130,9 +130,10 @@ export default function CommunityPage() {
             A structured, yet casual environment designed for meaningful conversations
           </div>
           <div className="expect-container">
-
+            
+            {/* Row 1 */}
             <div className="expect-row" data-animate>
-              <div className="box expect-box expect-box-1">
+              <div className="box expect-box expect-box-1" data-animate>
                 <div className="box-icon">
                   <Image src="/images/community/lightbulb.png" width={30} height={30} alt="icon" />
                 </div>
@@ -164,6 +165,7 @@ export default function CommunityPage() {
               />
             </div>
 
+            {/* Row 2 */}
             <div className="expect-row expect-row-reverse" data-animate>
               <div className="expect-image-wrapper">
                 <Image 
@@ -197,8 +199,9 @@ export default function CommunityPage() {
               />
             </div>
 
+            {/* Row 3 */}
             <div className="expect-row" data-animate>
-              <div className="box expect-box expect-box-3">
+              <div className="box expect-box expect-box-3" data-animate>
                 <div className="box-icon">
                   <Image src="/images/community/lightbulb.png" width={30} height={30} alt="icon" />
                 </div>
