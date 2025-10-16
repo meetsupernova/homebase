@@ -87,15 +87,15 @@ export default function EmailSignup() {
     <>
       <Message message={message} type={messageType} visible={messageVisible} />
       <span id="join" className="anchor"></span>
-      <div className="join-content">
-        <h1 className="join-heading">
+      <div className="emailSignup-content">
+        <h1 className="emailSignup-heading">
           Join the Waitlist
         </h1>
-        <p className="join-text">
+        <p className="emailSignup-text">
           Join hundreds of founders waiting to unlock smarter, faster fundraising.
           You&apos;ll also gain access to our newsletter.
         </p>
-        <form className="join-email" onSubmit={handleSubmit}>
+        <form className="emailSignup-email" onSubmit={handleSubmit}>
           <input
             id="join-email"
             type="email"
@@ -111,7 +111,7 @@ export default function EmailSignup() {
 
           <button 
             type="submit" 
-            className={`join-btn ${isSubmitting ? 'submitting' : ''}`}
+            className={`emailSignup-btn ${isSubmitting ? 'submitting' : ''}`}
             disabled={isSubmitting}
           >
             {isSubmitting ? 'Joining...' : 'Join'}

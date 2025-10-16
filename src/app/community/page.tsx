@@ -174,7 +174,7 @@ export default function CommunityPage() {
                   className="expect-image"
                 />
               </div>
-              <div className="box expect-box expect-box-2">
+              <div className="box expect-box expect-box-2" data-animate>
                 <div className="box-icon">
                   <Image src="/images/community/lightbulb.png" width={30} height={30} alt="icon" />
                 </div>
