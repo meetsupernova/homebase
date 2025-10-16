@@ -38,27 +38,6 @@ export default function CommunityPage() {
     }
   ]
 
-  const expectBoxData = [
-    {
-      icon: '/images/community/lightbulb.png',
-      heading: 'Shorter Founder Pitches',
-      text: 'Quick, impactful presentations where founders share their vision and what they\'re looking for in teammates.',
-      className: 'expect-box-1'
-    },
-    {
-      icon: '/images/community/lightbulb.png',
-      heading: 'Breakout Networking',
-      text: 'Small group sessions designed to facilitate deeper conversations and meaningful connections.',
-      className: 'expect-box-2'
-    },
-    {
-      icon: '/images/community/lightbulb.png',
-      heading: 'Team Matching',
-      text: 'Structured opportunities to find your perfect co-founder or join an exciting early-stage startup.',
-      className: 'expect-box-3'
-    }
-  ]
-
   return (
     <main>
       {/* Hero Section */}
@@ -69,14 +48,12 @@ export default function CommunityPage() {
         <p className="hero-text" data-animate>
           Where founders and future teammates connect.
         </p>
-        <div className="community" data-animate>
-          <Image 
-            className="community-img" 
-            src="/images/community/community-img.png" 
-            alt="Community event photo" 
-            width={700} 
-            height={400}
-          />
+        <div className="hero-img" data-animate>
+          <div className="hero-img-content">
+            <p className="hero-img-title">Supernova</p>
+            <h1 className="hero-img-heading">Find a Cofounder Pitch</h1>
+            <p className="hero-img-text">Helping startup founders build dream teams</p>
+          </div>
         </div>
         <p className="hero2-heading" data-animate>
           Why Join?
@@ -152,24 +129,96 @@ export default function CommunityPage() {
           <div className="expect-text" data-animate>
             A structured, yet casual environment designed for meaningful conversations
           </div>
-          <div className="expect-boxes" data-animate>
-            {expectBoxData.map((box, index) => (
-              <div
-                key={index}
-                className={`box expect-box ${box.className}`}
-                data-animate
-              >
+          <div className="expect-container">
+
+            <div className="expect-row" data-animate>
+              <div className="box expect-box expect-box-1">
                 <div className="box-icon">
-                  <Image src={box.icon} width={30} height={30} alt="icon" />
+                  <Image src="/images/community/lightbulb.png" width={30} height={30} alt="icon" />
                 </div>
                 <div className="box-heading">
-                  {box.heading}
+                  Shorter Founder Pitches
                 </div>
                 <div className="box-text">
-                  {box.text}
+                  Quick, impactful presentations where founders share their vision and what they&apos;re looking for in teammates.
                 </div>
               </div>
-            ))}
+              <div className="expect-image-wrapper">
+                <Image 
+                  src="/images/community/expect-1.png" 
+                  width={400} 
+                  height={300} 
+                  alt="Founders pitching"
+                  className="expect-image"
+                />
+              </div>
+            </div>
+
+            <div className="expect-divider" data-animate>
+              <Image 
+                src="/images/hexagon-circles.png" 
+                width={76.5} 
+                height={88}  
+                alt=""
+                className="expect-dots"
+              />
+            </div>
+
+            <div className="expect-row expect-row-reverse" data-animate>
+              <div className="expect-image-wrapper">
+                <Image 
+                  src="/images/community/expect-2.png" 
+                  width={400} 
+                  height={300} 
+                  alt="Networking event"
+                  className="expect-image"
+                />
+              </div>
+              <div className="box expect-box expect-box-2">
+                <div className="box-icon">
+                  <Image src="/images/community/lightbulb.png" width={30} height={30} alt="icon" />
+                </div>
+                <div className="box-heading">
+                  Breakout Networking
+                </div>
+                <div className="box-text">
+                  Small group sessions designed to facilitate deeper conversations and meaningful connections.
+                </div>
+              </div>
+            </div>
+
+            <div className="expect-divider" data-animate>
+              <Image 
+                src="/images/hexagon-circles.png" 
+                width={76.5} 
+                height={88}  
+                alt=""
+                className="expect-dots"
+              />
+            </div>
+
+            <div className="expect-row" data-animate>
+              <div className="box expect-box expect-box-3">
+                <div className="box-icon">
+                  <Image src="/images/community/lightbulb.png" width={30} height={30} alt="icon" />
+                </div>
+                <div className="box-heading">
+                  Team Matching
+                </div>
+                <div className="box-text">
+                  Structured opportunities to find your perfect co-founder or join an exciting early-stage startup.
+                </div>
+              </div>
+              <div className="expect-image-wrapper">
+                <Image 
+                  src="/images/community/expect-3.png" 
+                  width={400} 
+                  height={300} 
+                  alt="Team collaboration"
+                  className="expect-image"
+                />
+              </div>
+            </div>
           </div>
         </section>
       </AnimatedSection>
