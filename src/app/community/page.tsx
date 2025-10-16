@@ -59,7 +59,7 @@ export default function CommunityPage() {
           Why Join?
         </p>
         <p className="hero2-text" data-animate>
-          Connect with likeminded individuals and build the next generation of companies.
+          Connect with like-minded individuals and build the next generation of companies.
         </p>
         <div className="hero-boxes" data-animate>
           {communityBoxData.map((box, index) => (
@@ -127,7 +127,7 @@ export default function CommunityPage() {
             What to Expect
           </div>
           <div className="expect-text" data-animate>
-            A structured, yet casual environment designed for meaningful conversations
+            A structured, yet casual environment designed for meaningful conversations.
           </div>
           <div className="expect-container">
             

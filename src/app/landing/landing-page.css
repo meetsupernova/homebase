@@ -221,13 +221,9 @@
 @media (max-width: 600px) {
     .emailSignup-content{
         width: 95%;
-        height:
     }
 
     .emailSignup-heading{
-        color: var(--Colors-Sage-12, #1A211E);
-        text-align: center;
-
         /* Typography/5/Bold */
         font-family: var(--Typography-Font-family-text, Inter);
         font-size: var(--Typography-Font-size-5, 28px);
@@ -238,9 +234,6 @@
     }
 
     .emailSignup-text{
-        color: var(--Colors-Sage-12, #1A211E);
-        text-align: center;
-
         /* Typography/2/Regular */
         font-family: var(--Typography-Font-family-text, Inter);
         font-size: var(--Typography-Font-size-2, 18px);
@@ -448,22 +441,28 @@
 
 .one-img{
     width: 773px;
+    height: 540px;
+    aspect-ratio: 773/540;
 }
 .two-img{
     width: 420px;
-    border-radius: 8px;
+    height: 540px;
+    aspect-ratio: 7/9;
 }
 .three-img{
     width: 731px;
-    border-radius: 8px;
+    height: 540px;
+    aspect-ratio: 731/540;
 }
 .four-img{
     width: 778px;
-    border-radius: 8px;
+    height: 600px;
+    aspect-ratio: 389/300;
 }
 .five-img{
     width: 810px;
-    border-radius: 8px; 
+    height: 598px;
+    aspect-ratio: 405/299;
 }
 
 @media (max-width: 1200px) {
