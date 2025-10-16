@@ -169,7 +169,9 @@
     .hero{
         max-width: 100%;
     }
-    .hero-heading {
+
+    .hero-heading,
+    .hero-sub {
         width: 90%;
         font-size: clamp(30px, 8vw, 36px);
         font-weight: 700;

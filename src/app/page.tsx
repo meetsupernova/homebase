@@ -26,8 +26,11 @@ export default function HomePage() {
       {/* Hero Section */}
       <AnimatedSection className="hero">
         <h1 className="hero-heading" data-animate>
-          Supercharge your Non-VC Funding
+          Supercharge your
         </h1>
+        <h2 className="hero-sub" data-animate>
+          Non-VC Funding
+        </h2>
         <p className="hero-text" data-animate>
           Every founder&apos;s dream deserves a change. We help these dreams 
           come true by intelligently matching them with non-VC funding.
