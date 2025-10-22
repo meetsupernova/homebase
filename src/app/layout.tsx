@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description: 'Your AI co-pilot for fundraising - matching you with the best fit grants, accelerators, and pitch opportunities.',
   keywords: 'startup funding, grants, accelerators, pitch competitions, AI, fundraising',
   icons: {
-    icon: '/images/icon.png',
+    icon: '/favicon.ico',
   },
 }
 

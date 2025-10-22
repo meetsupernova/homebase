@@ -32,7 +32,7 @@ export default function HomePage() {
           Non-VC Funding
         </h2>
         <p className="hero-text" data-animate>
-          Every founder&apos;s dream deserves a change. We help these dreams 
+          Every founder&apos;s dream deserves a chance. We help these dreams 
           come true by intelligently matching them with non-VC funding.
         </p>
         <div className="home" data-animate>
