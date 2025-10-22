@@ -5,6 +5,7 @@ import Image from 'next/image'
 import './community.css'
 import '@/components/footer_newsletter.css'
 
+{/* Community Page */}
 export default function CommunityPage() {
   const scrollToJoin = () => {
     if (window.location.pathname !== '/community') {

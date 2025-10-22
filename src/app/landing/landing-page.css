@@ -1,11 +1,13 @@
+/* Landing.css */
 /* Hero Section */
 .hero {
-    margin-top: 8vh;
+    margin-top: 8vh !important; /* Force the top margin */
     width: 100%;
     align-content: center;
     justify-content: center;
     text-align: center;
     position: relative;
+    padding-top: 0 !important; /* Ensure no extra padding */
 }
 
 .hero-heading,
@@ -20,9 +22,6 @@
     font-weight: 900;
     line-height: 60px;
     letter-spacing: -0.4px;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .hero-text {
@@ -36,9 +35,6 @@
     font-weight: 400;
     line-height: 28px;
     letter-spacing: -0.08px;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .hero-heading.slide-in,

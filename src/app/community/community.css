@@ -1,10 +1,12 @@
+/*Community.css*/
 .hero {
-    margin-top: 8vh;
+    margin-top: 8vh !important; /* Force the top margin */
     width: 100%;
     align-content: center;
     justify-content: center;
     text-align: center;
     position: relative;
+    padding-top: 0 !important; /* Ensure no extra padding */
 }
 
 .hero-heading {
