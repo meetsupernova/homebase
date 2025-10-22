@@ -1,13 +1,14 @@
 /* Landing.css */
 /* Hero Section */
 .hero {
-    margin-top: 8vh !important; /* Force the top margin */
+    margin-top: 8vh !important;
     width: 100%;
     align-content: center;
     justify-content: center;
     text-align: center;
     position: relative;
-    padding-top: 0 !important; /* Ensure no extra padding */
+    padding-top: 0 !important;
+    transform: translateZ(0); 
 }
 
 .hero-heading,
